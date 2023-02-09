@@ -18,7 +18,7 @@
     </v-toolbar>
 
   </div>
-  <v-navigation-drawer v-model="drawer" app dark permanent class="grey lighten-1 mt-12">
+  <v-navigation-drawer v-model="drawer" app dark permanent class="grey lighten-1 mt-1" >
         <v-list>
           <v-list-item
             v-for="link in links"
@@ -40,6 +40,7 @@
 
 <script lang="ts">
 export default {
+  name:'ToolbarNavigations',
   data() {
     return {
       drawer: false,
