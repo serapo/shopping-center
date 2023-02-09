@@ -1,18 +1,19 @@
 <template>
 
-    <v-container max-height="200"> 
+    <v-container > 
       <v-row >
         <v-col
           v-for="card in shopAll"
           :key="card.title"
           :cols="card.flex"
         >
-          <v-card>
+          <v-card >
             <v-img
               :src="card.images[0]"
               class="white--text align-end"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              
+              height="150"
+              width="250"
             >
               
             </v-img>
