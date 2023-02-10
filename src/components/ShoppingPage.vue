@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <v-container style="height: 890px; overflow-y: scroll">
     <v-col>
       <v-row align="stretch">
-        <v-col v-for="card in items" :key="card.title">
+        <v-col v-for="card in items" :key="card.title" >
           <v-card>
             <v-img
               :src="card.images[0]"

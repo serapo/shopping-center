@@ -1,5 +1,5 @@
 <template>
-  
+  <shopping-page/>
 </template>
 
 <script lang="ts">
