@@ -2,7 +2,7 @@
   <v-container style="height: 890px; overflow-y: scroll">
     <v-col>
       <v-row align="stretch">
-        <v-col v-for="card in items" :key="card.title" >
+        <v-col v-for="card in items" :key="card.title">
           <v-card>
             <v-img
               :src="card.images[0]"
@@ -58,13 +58,13 @@ export default defineComponent({
     this.loadItems();
   },
   methods: {
-    ...mapActions(["loadItems", "increment","decrement"]),
-    heartBtnClick(card:any) {
-      if(card.color=="red"){
-        card.color="black"
+    ...mapActions(["loadItems", "increment", "decrement"]),
+    heartBtnClick(card: any) {
+      if (card.color == "red") {
+        card.color = "black";
         this.decrement();
-      }else {
-        card.color="red"
+      } else {
+        card.color = "red";
         this.increment();
       }
     },
