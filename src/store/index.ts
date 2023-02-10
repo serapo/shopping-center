@@ -14,6 +14,9 @@ export default createStore({
     increment(state) {
       state.count++;
     },
+    decrement(state) {
+      state.count--;
+    },
   },
   actions: {
     loadItems({ commit }) {
@@ -28,6 +31,7 @@ export default createStore({
         });
     },
     increment: ({ commit }) => commit('increment'),
+    decrement: ({ commit }) => commit('decrement'),
   },
   modules: {},
 });

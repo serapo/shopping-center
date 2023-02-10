@@ -58,10 +58,15 @@ export default defineComponent({
     this.loadItems();
   },
   methods: {
-    ...mapActions(["loadItems", "increment"]),
+    ...mapActions(["loadItems", "increment","decrement"]),
     heartBtnClick(card:any) {
-      card.color="red"
-      this.increment();
+      if(card.color=="red"){
+        card.color="black"
+        this.decrement();
+      }else {
+        card.color="red"
+        this.increment();
+      }
     },
   },
 });
