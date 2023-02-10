@@ -5,7 +5,7 @@
       prominent
       image="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
     >
-      <v-app-bar-nav-icon ></v-app-bar-nav-icon> 
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon> 
       <v-toolbar-title>Shopping Center</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-col>
@@ -20,7 +20,7 @@
       </v-btn>
     </v-toolbar>
   </div>
-  <!-- <v-navigation-drawer
+   <v-navigation-drawer
     v-model="drawer"
     app
     dark
@@ -43,7 +43,7 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-  </v-navigation-drawer> -->
+  </v-navigation-drawer> 
 </template>
 
 <script lang="ts">
