@@ -8,6 +8,12 @@
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Shopping Center</v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-col>
+        <v-row class="pl-6"> <v-icon :color='count>0 ? "red" : "black"'>mdi-heart</v-icon></v-row>
+        <v-row>
+          <v-label>Favories {{ count }}</v-label>
+        </v-row>
+      </v-col>
 
       <v-btn icon>
         <v-icon>mdi-export</v-icon>
@@ -41,6 +47,7 @@
 </template>
 
 <script lang="ts">
+import { mapState } from "vuex";
 export default {
   name: "ToolbarNavigations",
   data() {
@@ -92,6 +99,9 @@ export default {
         { icon: "exit_to_app", text: "Logout", route: "/" },
       ],
     };
+  },
+  computed: {
+    ...mapState(["count"]),
   },
 };
 </script>

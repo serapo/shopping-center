@@ -18,9 +18,8 @@
             ></v-card-title>
             <v-card-actions>
               <v-spacer></v-spacer>
-
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
+              <v-btn icon @click="heartBtnClick(card)">
+                <v-icon :color="card.color">mdi-heart</v-icon>
               </v-btn>
 
               <v-btn icon>
@@ -49,16 +48,21 @@ export default defineComponent({
     return {
       shopAll: [] as Array<any>,
       show: false,
+      myIconColor: "black",
     };
   },
   computed: {
-    ...mapState(["items"]),
+    ...mapState(["items", "count"]),
   },
-  mounted(){
+  mounted() {
     this.loadItems();
   },
   methods: {
-    ...mapActions(["loadItems"]),
+    ...mapActions(["loadItems", "increment"]),
+    heartBtnClick(card:any) {
+      card.color="red"
+      this.increment();
+    },
   },
 });
 </script>

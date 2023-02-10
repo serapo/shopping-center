@@ -5,6 +5,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+
 // Components
 import ShoppingPage from '../components/ShoppingPage.vue';
 
@@ -14,5 +15,6 @@ export default defineComponent({
   components: {
     ShoppingPage,
   },
+
 });
 </script>
