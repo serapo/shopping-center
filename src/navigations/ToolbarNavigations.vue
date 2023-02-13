@@ -1,15 +1,32 @@
 <template>
-  <div>
-    <v-toolbar
-      dark
-      prominent
-     color="#E6E6FA"
-    >
-     
+  <v-row>
+    <v-col>
+      <v-card color="grey-lighten-4" flat>
+        <v-toolbar>
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          <v-toolbar-title>Shopping Center</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon>mdi-magnify</v-icon>
+          </v-btn>
+          <v-btn icon>{{ count }}
+            <v-icon :color="count > 0 ? 'red' : 'black'">mdi-heart </v-icon> 
+          </v-btn>
+          <v-btn icon>
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </v-toolbar>
+      </v-card>
+    </v-col>
+  </v-row>
+  <!-- <div>
+    <v-toolbar dark prominent color="#E6E6FA">
       <v-toolbar-title>Shopping Center</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-col>
-        <v-row class="pl-6"> <v-icon :color='count>0 ? "red" : "black"'>mdi-heart</v-icon></v-row>
+        <v-row class="pl-6">
+          <v-icon :color="count > 0 ? 'red' : 'black'">mdi-heart</v-icon></v-row
+        >
         <v-row>
           <v-label>Favories {{ count }}</v-label>
         </v-row>
@@ -19,8 +36,7 @@
         <v-icon>mdi-export</v-icon>
       </v-btn>
     </v-toolbar>
-  </div>
-
+  </div> -->
 </template>
 
 <script lang="ts">
