@@ -17,7 +17,8 @@
               v-text="card.title"
             ></v-card-title>
             <v-col align="center">
-              <v-label>Price : ₺{{ card.price }}</v-label>
+              <v-label><span
+                >Price : </span> ₺{{ card.price }}</v-label>
             </v-col>
 
             <v-card-actions>
