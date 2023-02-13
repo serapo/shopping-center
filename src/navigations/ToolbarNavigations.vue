@@ -9,8 +9,11 @@
           <v-btn icon>
             <v-icon>mdi-magnify</v-icon>
           </v-btn>
-          <v-btn icon>{{ count }}
+          <v-btn icon>  {{ count==0 ? "" : count }}
             <v-icon :color="count > 0 ? 'red' : 'black'">mdi-heart </v-icon> 
+          </v-btn>
+          <v-btn icon>
+            <v-icon >mdi-basket </v-icon> 
           </v-btn>
           <v-btn icon>
             <v-icon>mdi-dots-vertical</v-icon>

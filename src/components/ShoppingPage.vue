@@ -10,6 +10,7 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="250"
               width="350"
+              cover
             >
             </v-img>
             <v-card-title
@@ -17,16 +18,21 @@
               v-text="card.title"
             ></v-card-title>
             <v-col align="center">
-              <v-label><span
-                >Price : </span> ₺{{ card.price }}</v-label>
+              <v-label class="text-h5 text-black"> ₺{{ card.price }}</v-label>
             </v-col>
 
             <v-card-actions>
+              <v-row>
+                <v-btn class="ml-2" size="40" variant="flat" color="error">
+                  -
+                </v-btn>
+                <v-btn size="40" variant="flat" color="secondary"> + </v-btn>
+              </v-row>
+
               <v-spacer></v-spacer>
               <v-btn icon @click="heartBtnClick(card)">
                 <v-icon :color="card.color">mdi-heart</v-icon>
               </v-btn>
-
               <v-btn icon>
                 <v-icon>mdi-bookmark</v-icon>
               </v-btn>
