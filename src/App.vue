@@ -1,10 +1,10 @@
 <template>
-  <v-app>
-    <toolbar-navigations />
+  <v-app  >
+    <toolbar-navigations @show="sendToShow"/>
     <v-row class="ma-2" >
-      <v-col cols="2">
+      <v-col cols="2" v-show="showLoading">
         <v-card height="100%"  color="#F0F8FF">
-          <left-navigations/>
+          <left-navigations />
         </v-card>
       </v-col>
       <v-col>
@@ -23,9 +23,11 @@ import LeftNavigations from "./navigations/LeftNavigations.vue";
 
 export default defineComponent({
   name: "App",
+
   components: { ToolbarNavigations, LeftNavigations },
   data() {
     return {
+      showLoading:'',
       items: [
         { title: "Home", icon: "mdi-home-city" },
         { title: "My Account", icon: "mdi-account" },
@@ -33,5 +35,11 @@ export default defineComponent({
       ],
     };
   },
+  methods :{
+    sendToShow (show:any){
+       this.showLoading=show;     
+      },
+
+    }
 });
 </script>

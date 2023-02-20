@@ -3,7 +3,7 @@
     <v-col>
       <v-card color="grey-lighten-4" flat>
         <v-toolbar>
-          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          <v-app-bar-nav-icon @click="show = !show"></v-app-bar-nav-icon>
           <v-toolbar-title>Shopping Center</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-btn icon>
@@ -46,9 +46,11 @@
 import { mapState } from "vuex";
 export default {
   name: "ToolbarNavigations",
+  emits: ["show"],
   data() {
     return {
       drawer: true,
+      show:false,
       links: [
         {
           icon: "dashboard",
@@ -99,6 +101,18 @@ export default {
   computed: {
     ...mapState(["count"]),
   },
+  watch: {
+    show: {
+      handler(newValue, oldValue) {
+        // Note: `newValue` will be equal to `oldValue` here
+        // on nested mutations as long as the object itself
+        // hasn't been replaced.
+        console.log(newValue,oldValue,"aaaaaaa")
+        this.$emit('show', newValue )
+      },
+      deep: true
+    }
+  }
 };
 </script>
 
