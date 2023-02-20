@@ -103,11 +103,7 @@ export default {
   },
   watch: {
     show: {
-      handler(newValue, oldValue) {
-        // Note: `newValue` will be equal to `oldValue` here
-        // on nested mutations as long as the object itself
-        // hasn't been replaced.
-        console.log(newValue,oldValue,"aaaaaaa")
+      handler(newValue) {
         this.$emit('show', newValue )
       },
       deep: true
