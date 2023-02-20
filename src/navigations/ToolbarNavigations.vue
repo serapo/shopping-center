@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       drawer: true,
-      show:false,
+      
       links: [
         {
           icon: "dashboard",

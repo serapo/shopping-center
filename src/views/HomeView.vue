@@ -1,19 +1,31 @@
 <template>
-  <shopping-page/>
+ <product/>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 
-// Components
-import ShoppingPage from '../components/ShoppingPage.vue';
+import Product from "../components/Product.vue";
 
 export default defineComponent({
-  name: 'HomeView',
+  name: "HomeView",
 
-  components: {
-    ShoppingPage,
+  components: {  Product },
+  data() {
+    return {
+      showLoading: "",
+      items: [
+        { title: "Home", icon: "mdi-home-city" },
+        { title: "My Account", icon: "mdi-account" },
+        { title: "Users", icon: "mdi-account-group-outline" },
+      ],
+    };
+  },
+  methods: {
+    sendToShow(show: any) {
+      this.showLoading = show;
+    },
   },
 
 });
