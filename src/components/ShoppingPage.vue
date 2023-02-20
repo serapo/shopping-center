@@ -11,6 +11,7 @@
               height="250"
               width="350"
               cover
+              @click="goProductDetail(card.id)"
             >
             </v-img>
             <v-card-title
@@ -79,6 +80,9 @@ export default defineComponent({
         this.increment();
       }
     },
+    goProductDetail(id:number){
+      this.$router.push({ name: 'product', params: { id: id } })
+    }
   },
 });
 </script>
