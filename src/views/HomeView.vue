@@ -16,9 +16,9 @@ export default defineComponent({
     return {
       showLoading: "",
       items: [
-        { title: "Home", icon: "mdi-home-city" },
-        { title: "My Account", icon: "mdi-account" },
-        { title: "Users", icon: "mdi-account-group-outline" },
+        { title: "Home", icon: "mdi-home-city" ,url:"/"},
+        { title: "Product", icon: "mdi-account", url:"/about" },
+      
       ],
     };
   },

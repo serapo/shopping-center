@@ -1,8 +1,10 @@
 <template>
-  <v-list-item v-for="item in items" :key="item.title" link >
+  <v-list-item v-for="item in items" :key="item.title" link>
     <v-list-item-title>
       <v-icon> {{ item.icon }}</v-icon>
-      {{ item.title }}
+      <router-link class="routerLink title" v-if="item.url" :to="item.url">{{
+        item.title
+      }}</router-link>
     </v-list-item-title>
   </v-list-item>
 </template>
@@ -14,12 +16,16 @@ export default {
     return {
       drawer: true,
       items: [
-        { title: "Home", icon: "mdi-home-city" },
-        { title: "My Account", icon: "mdi-account" },
-        { title: "Users", icon: "mdi-account-group-outline" },
+        { title: "Home", icon: "mdi-home-city", url: "/" },
+        { title: "My Account", icon: "mdi-account", url: "/about" },
       ],
       mini: true,
     };
   },
 };
 </script>
+<style>
+.routerLink {
+  text-decoration: none !important;
+}
+</style>
