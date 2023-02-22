@@ -12,7 +12,7 @@
           @click="goProductDetail(card.id)"
         >
         </v-img>
-        <v-card-title class="text-center" >{{ card.title }}</v-card-title>
+        <v-card-title class="text-center">{{ card.title }}</v-card-title>
         <v-col align="center">
           <v-label class="text-h5 text-black"> ₺{{ card.price }}</v-label>
         </v-col>

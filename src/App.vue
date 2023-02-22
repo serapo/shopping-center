@@ -1,5 +1,8 @@
 <template>
-  <v-toolbar>
+  <v-toolbar  
+  class="fixed-bar"
+  
+  >
     <v-app-bar-nav-icon @click="changeShow()"></v-app-bar-nav-icon>
     <v-toolbar-title>Shopping Center</v-toolbar-title>
     <v-spacer></v-spacer>
@@ -17,14 +20,19 @@
       <v-icon>mdi-dots-vertical</v-icon>
     </v-btn>
   </v-toolbar>
-  <v-row>
-    <v-col cols="3" v-show="show">
+  <v-row v-if="show">
+    <v-col cols="2">
       <left-navigations></left-navigations>
     </v-col>
-    <v-col cols="9">
-      <div id="nav">
-        
-      </div>
+
+    <v-col cols="10">
+      <div id="nav"></div>
+      <router-view />
+    </v-col>
+  </v-row>
+  <v-row v-else>
+    <v-col cols="12">
+      <div id="nav"></div>
       <router-view />
     </v-col>
   </v-row>
@@ -54,3 +62,11 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.fixed-bar {
+  position: sticky;
+  position: -webkit-sticky; /* for Safari */
+  top: 0.2em;
+  z-index: 2;
+}
+</style>
