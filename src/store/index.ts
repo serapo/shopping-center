@@ -5,6 +5,7 @@ export default createStore({
   state: {
     items: [] as Array<any>,
     count: 0,
+    countBasket:0,
   },
   getters: {},
   mutations: {
@@ -16,6 +17,12 @@ export default createStore({
     },
     decrement(state) {
       state.count--;
+    },
+    incrementcountBasket(state) {
+      state.countBasket++;
+    },
+    decrementcountBasket(state) {
+      state.countBasket--;
     },
   },
   actions: {

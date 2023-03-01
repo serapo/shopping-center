@@ -15,12 +15,29 @@
         </v-col>
 
         <v-card-actions>
-          <v-row>
-            <v-btn class="ml-2" size="40" variant="flat" color="error">
+          <v-row v-if="!showNumber">
+            <v-btn @click="numberEvent">Sepete Ekle</v-btn>
+          </v-row>
+          <v-row v-else-if="showNumber">
+            <v-btn
+              class="ml-2"
+              size="40"
+              variant="flat"
+              color="error"
+              @click="descrementBtnClick(card)"
+            >
               -
             </v-btn>
-            <v-btn size="40" variant="flat" color="secondary"> + </v-btn>
+            <v-btn
+              size="40"
+              variant="flat"
+              color="secondary"
+              @click="incrementBtnClick(card)"
+            >
+              +
+            </v-btn>
           </v-row>
+          -
 
           <v-spacer></v-spacer>
           <v-btn icon @click="heartBtnClick(card)">
@@ -51,16 +68,26 @@ export default defineComponent({
       shopAll: [] as Array<any>,
       show: false,
       myIconColor: "black",
+      showNumber: false,
     };
   },
   computed: {
-    ...mapState(["items", "count"]),
+    ...mapState(["items", "count", "countBasket"]),
   },
   mounted() {
     this.loadItems();
   },
   methods: {
-    ...mapActions(["loadItems", "increment", "decrement"]),
+    numberEvent() {
+      this.showNumber = true;
+    },
+    ...mapActions([
+      "loadItems",
+      "increment",
+      "decrement",
+      "incrementcountBasket",
+      "decrementcountBasket",
+    ]),
     heartBtnClick(card: any) {
       if (card.color == "red") {
         card.color = "black";
@@ -69,6 +96,13 @@ export default defineComponent({
         card.color = "red";
         this.increment();
       }
+    },
+    descrementBtnClick(card: any) {
+      console.log("dfsdfgsfsd")
+      this.decrementcountBasket();
+    },
+    incrementBtnClick(card: any) {
+      this.incrementcountBasket();
     },
     goProductDetail(id: number) {
       this.$router.push({ name: "product", params: { id: id } });

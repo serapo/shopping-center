@@ -80,5 +80,8 @@ export default defineComponent({
   height: 2rem;
   color: white;
   text-align: center;
+  display: flex;
+  justify-content: center;
+    
 }
 </style>
