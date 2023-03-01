@@ -1,13 +1,10 @@
 <template>
   <v-row>
-    <v-col v-for="card in items" :key="card.title">
-      <v-card>
+    <v-col sm="12" md="6" xl="3" v-for="card in items" :key="card.title">
+      <v-card width="70%" class="ma-4" border="false">
         <v-img
           :src="card.images[0]"
-          class="mx-auto"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-          height="250"
-          width="350"
           cover
           @click="goProductDetail(card.id)"
         >

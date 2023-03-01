@@ -1,8 +1,9 @@
 <template>
-  <v-toolbar  
-  class="fixed-bar"
-  
+  <span class="main-toolbar"
+    >İndirim! Ödeme aşamasında TEES25 kodu ile tüm sitede %25 indirim.</span
   >
+
+  <v-toolbar class="fixed-bar">
     <v-app-bar-nav-icon @click="changeShow()"></v-app-bar-nav-icon>
     <v-toolbar-title>Shopping Center</v-toolbar-title>
     <v-spacer></v-spacer>
@@ -68,5 +69,16 @@ export default defineComponent({
   position: -webkit-sticky; /* for Safari */
   top: 0.2em;
   z-index: 2;
+  padding-top: 1rem;
+}
+
+.main-toolbar {
+  position: fixed;
+  z-index: 1000;
+  background-color: black;
+  width: 100%;
+  height: 2rem;
+  color: white;
+  text-align: center;
 }
 </style>
