@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col sm="12" md="6" xl="3" v-for="card in items" :key="card.title">
-      <v-card width="70%" class="ma-4" border="false">
+      <v-card width="100%">
         <v-img
           :src="card.images[0]"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -15,7 +15,7 @@
         </v-col>
 
         <v-card-actions>
-          <v-row v-if="!showNumber">
+          <!-- <v-row v-if="!showNumber">
             <v-btn @click="numberEvent">Sepete Ekle</v-btn>
           </v-row>
           <v-row v-else-if="showNumber">
@@ -36,8 +36,8 @@
             >
               +
             </v-btn>
-          </v-row>
-          -
+          </v-row> -->
+          
 
           <v-spacer></v-spacer>
           <v-btn icon @click="heartBtnClick(card)">
